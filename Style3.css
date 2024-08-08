@@ -1,0 +1,271 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #372a40;
+  margin: 0;
+  cursor: url('cursor.png');
+  overflow: hidden;
+}
+
+.envelope {
+  position: relative;
+  perspective: 1000px;
+}
+
+.back {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  background: #221313;
+}
+
+.front {
+  position: absolute;
+  border-right: 130px solid #815ac0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 120px;
+  z-index: 3;
+}
+
+.front:before {
+  content: "";
+  position: absolute;
+  border-left: 130px solid #69489e;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: -100px;
+  left: -120px;
+}
+
+.front:after {
+  content: "";
+  position: absolute;
+  border-bottom: 105px solid #554a6b;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: -5px;
+  left: -120px;
+}
+
+.top {
+  position: absolute;
+  border-top: 105px solid #aeadab;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: 2s;
+}
+
+.envelope:hover .top {
+  transform: rotateX(160deg);
+}
+
+.letter {
+  position: absolute;
+  background: rgb(141, 199, 6);
+  width: 230px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  transition: 3s;
+}
+
+.envelope:hover .letter {
+  transform: translateY(-100px);
+  z-index: 2;
+}
+
+.text1 {
+  position: absolute;
+  color: rgb(137, 178, 255);
+  font-family: sans-serif;
+  top: -55%;
+}
+
+.text {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  font-weight: bold;
+  color: red;
+  position: relative;
+  top: -10px;
+  left: 20px;
+}
+
+/*---heart -----*/
+.heart {
+  background-color: red;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  transform: rotate(-45deg);
+  box-shadow: -5px 10px 90px red;
+  animation: untold 3s linear infinite;
+}
+
+@keyframes untold {
+  0% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  70% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+
+.heart:before {
+  content: "";
+  text-align: center;
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  top: -40px;
+  border-radius: 50px;
+}
+
+.heart:after {
+  content: "";
+  justify-content: center;
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  right: -40px;
+  border-radius: 50px;
+}
+
+/* Additional Features */
+
+.envelope:hover .heart {
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.envelope:hover .text1 {
+  top: -10%;
+  transition: 0.8s;
+  
+}
+
+.envelope .stamp {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #f39c12;
+  border-radius: 50%;
+  top: 20px;
+  right: 20px;
+}
+
+.envelope .stamp:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.envelope .ribbon {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background: #c0392b;
+  top: 50px;
+  left: 20px;
+  transform: rotate(-45deg);
+}
+
+.envelope .ribbon:before, .envelope .ribbon:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #c0392b;
+}
+
+.envelope .ribbon:before {
+  top: -10px;
+  left: 0;
+}
+
+.envelope .ribbon:after {
+  top: 0;
+  left: -10px;
+}
+
+/* Your existing Style3.css code remains unchanged */
+
+/* Additional Enhancements */
+
+
+.envelope {
+  background: #111; /* Set background color similar to hearts example */
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+/* ... rest of your existing Style3.css code ... */
+
+.envelope:hover .heart {
+  animation: heartbeat 1s ease-in-out infinite, untoldcoding 5s linear infinite; /* Combine both animations on hover */
+}
+
+/* ... rest of your existing Style3.css code ... */
+
+/* Additional Features */
+
+.envelope .top {
+  background: radial-gradient(circle, #bf8cbf 10%, transparent 70%);
+  transition: 2s;
+}
+
+.envelope:hover .top {
+  transform: rotateX(160deg);
+}
+
+.envelope:hover .text1 {
+  top: -10%;
+  transition: 0.8s;
+}
+
+.heart-text {
+  color: yellow;
+  font-weight: bold;
+  transform: rotate(0);
+  display: inline-block;
+  margin-top: 10px;
+}
